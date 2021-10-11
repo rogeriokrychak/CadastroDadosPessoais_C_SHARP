@@ -29,7 +29,7 @@ namespace CadastroDadosPessoais
         /// </summary>
         private void InitializeComponent()
         {
-            this.campoUF = new System.Windows.Forms.ComboBox();
+            this.comboEstados = new System.Windows.Forms.ComboBox();
             this.campoData = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
             this.campoNome = new System.Windows.Forms.TextBox();
@@ -37,7 +37,7 @@ namespace CadastroDadosPessoais
             this.campoSobrenome = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.campoEndereço = new System.Windows.Forms.TextBox();
+            this.campoEndereco = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.campoCidade = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -45,21 +45,21 @@ namespace CadastroDadosPessoais
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
-            this.checkBox3 = new System.Windows.Forms.CheckBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.campoTelefone = new System.Windows.Forms.TextBox();
+            this.campoFone = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.CampoEmail = new System.Windows.Forms.TextBox();
-            this.btnEnviar = new System.Windows.Forms.Button();
-            this.btnLimpar = new System.Windows.Forms.Button();
+            this.btnCancelar = new System.Windows.Forms.Button();
+            this.radioMasculino = new System.Windows.Forms.RadioButton();
+            this.radioFeminino = new System.Windows.Forms.RadioButton();
+            this.radioOutros = new System.Windows.Forms.RadioButton();
+            this.btnSalve = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // campoUF
+            // comboEstados
             // 
-            this.campoUF.FormattingEnabled = true;
-            this.campoUF.Items.AddRange(new object[] {
+            this.comboEstados.FormattingEnabled = true;
+            this.comboEstados.Items.AddRange(new object[] {
             "AC",
             "AM",
             "RR",
@@ -74,17 +74,20 @@ namespace CadastroDadosPessoais
             "SP",
             "RG",
             "PR"});
-            this.campoUF.Location = new System.Drawing.Point(455, 210);
-            this.campoUF.Name = "campoUF";
-            this.campoUF.Size = new System.Drawing.Size(151, 28);
-            this.campoUF.TabIndex = 0;
+            this.comboEstados.Location = new System.Drawing.Point(455, 210);
+            this.comboEstados.Name = "comboEstados";
+            this.comboEstados.Size = new System.Drawing.Size(151, 28);
+            this.comboEstados.TabIndex = 0;
             // 
             // campoData
             // 
             this.campoData.Location = new System.Drawing.Point(75, 274);
+            this.campoData.MaxDate = new System.DateTime(2100, 12, 31, 0, 0, 0, 0);
+            this.campoData.MinDate = new System.DateTime(1850, 1, 1, 0, 0, 0, 0);
             this.campoData.Name = "campoData";
             this.campoData.Size = new System.Drawing.Size(312, 27);
             this.campoData.TabIndex = 1;
+            this.campoData.Value = new System.DateTime(2021, 10, 11, 20, 35, 0, 0);
             // 
             // label1
             // 
@@ -136,12 +139,12 @@ namespace CadastroDadosPessoais
             this.label4.TabIndex = 7;
             this.label4.Text = "ENDEREÇO";
             // 
-            // campoEndereço
+            // campoEndereco
             // 
-            this.campoEndereço.Location = new System.Drawing.Point(75, 141);
-            this.campoEndereço.Name = "campoEndereço";
-            this.campoEndereço.Size = new System.Drawing.Size(406, 27);
-            this.campoEndereço.TabIndex = 8;
+            this.campoEndereco.Location = new System.Drawing.Point(75, 141);
+            this.campoEndereco.Name = "campoEndereco";
+            this.campoEndereco.Size = new System.Drawing.Size(406, 27);
+            this.campoEndereco.TabIndex = 8;
             // 
             // label5
             // 
@@ -202,36 +205,6 @@ namespace CadastroDadosPessoais
             this.label9.TabIndex = 15;
             this.label9.Text = "ORIENTAÇÃO SEXUAL";
             // 
-            // checkBox1
-            // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(455, 274);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(114, 24);
-            this.checkBox1.TabIndex = 16;
-            this.checkBox1.Text = "MASCULINO";
-            this.checkBox1.UseVisualStyleBackColor = true;
-            // 
-            // checkBox2
-            // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Location = new System.Drawing.Point(575, 274);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(100, 24);
-            this.checkBox2.TabIndex = 17;
-            this.checkBox2.Text = "FEMININO";
-            this.checkBox2.UseVisualStyleBackColor = true;
-            // 
-            // checkBox3
-            // 
-            this.checkBox3.AutoSize = true;
-            this.checkBox3.Location = new System.Drawing.Point(681, 274);
-            this.checkBox3.Name = "checkBox3";
-            this.checkBox3.Size = new System.Drawing.Size(88, 24);
-            this.checkBox3.TabIndex = 18;
-            this.checkBox3.Text = "OUTROS";
-            this.checkBox3.UseVisualStyleBackColor = true;
-            // 
             // label10
             // 
             this.label10.AutoSize = true;
@@ -241,12 +214,12 @@ namespace CadastroDadosPessoais
             this.label10.TabIndex = 19;
             this.label10.Text = "TELEFONE";
             // 
-            // campoTelefone
+            // campoFone
             // 
-            this.campoTelefone.Location = new System.Drawing.Point(75, 346);
-            this.campoTelefone.Name = "campoTelefone";
-            this.campoTelefone.Size = new System.Drawing.Size(262, 27);
-            this.campoTelefone.TabIndex = 20;
+            this.campoFone.Location = new System.Drawing.Point(75, 346);
+            this.campoFone.Name = "campoFone";
+            this.campoFone.Size = new System.Drawing.Size(262, 27);
+            this.campoFone.TabIndex = 20;
             // 
             // label11
             // 
@@ -264,23 +237,60 @@ namespace CadastroDadosPessoais
             this.CampoEmail.Size = new System.Drawing.Size(262, 27);
             this.CampoEmail.TabIndex = 22;
             // 
-            // btnEnviar
+            // btnCancelar
             // 
-            this.btnEnviar.Location = new System.Drawing.Point(609, 466);
-            this.btnEnviar.Name = "btnEnviar";
-            this.btnEnviar.Size = new System.Drawing.Size(160, 59);
-            this.btnEnviar.TabIndex = 23;
-            this.btnEnviar.Text = "ENVIAR";
-            this.btnEnviar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Location = new System.Drawing.Point(609, 466);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(160, 59);
+            this.btnCancelar.TabIndex = 23;
+            this.btnCancelar.Text = "CANCELAR";
+            this.btnCancelar.UseVisualStyleBackColor = true;
             // 
-            // btnLimpar
+            // radioMasculino
             // 
-            this.btnLimpar.Location = new System.Drawing.Point(425, 466);
-            this.btnLimpar.Name = "btnLimpar";
-            this.btnLimpar.Size = new System.Drawing.Size(160, 59);
-            this.btnLimpar.TabIndex = 24;
-            this.btnLimpar.Text = "LIMPAR";
-            this.btnLimpar.UseVisualStyleBackColor = true;
+            this.radioMasculino.AutoSize = true;
+            this.radioMasculino.Location = new System.Drawing.Point(455, 277);
+            this.radioMasculino.Name = "radioMasculino";
+            this.radioMasculino.Size = new System.Drawing.Size(113, 24);
+            this.radioMasculino.TabIndex = 25;
+            this.radioMasculino.TabStop = true;
+            this.radioMasculino.Text = "MASCULINO";
+            this.radioMasculino.UseVisualStyleBackColor = true;
+            this.radioMasculino.CheckedChanged += new System.EventHandler(this.radioMasculino_CheckedChanged);
+            // 
+            // radioFeminino
+            // 
+            this.radioFeminino.AutoSize = true;
+            this.radioFeminino.Location = new System.Drawing.Point(578, 277);
+            this.radioFeminino.Name = "radioFeminino";
+            this.radioFeminino.Size = new System.Drawing.Size(99, 24);
+            this.radioFeminino.TabIndex = 26;
+            this.radioFeminino.TabStop = true;
+            this.radioFeminino.Text = "FEMININO";
+            this.radioFeminino.UseVisualStyleBackColor = true;
+            this.radioFeminino.CheckedChanged += new System.EventHandler(this.radioFeminino_CheckedChanged);
+            // 
+            // radioOutros
+            // 
+            this.radioOutros.AutoSize = true;
+            this.radioOutros.Location = new System.Drawing.Point(679, 277);
+            this.radioOutros.Name = "radioOutros";
+            this.radioOutros.Size = new System.Drawing.Size(87, 24);
+            this.radioOutros.TabIndex = 27;
+            this.radioOutros.TabStop = true;
+            this.radioOutros.Text = "OUTROS";
+            this.radioOutros.UseVisualStyleBackColor = true;
+            this.radioOutros.CheckedChanged += new System.EventHandler(this.radioOutros_CheckedChanged);
+            // 
+            // btnSalve
+            // 
+            this.btnSalve.Location = new System.Drawing.Point(434, 466);
+            this.btnSalve.Name = "btnSalve";
+            this.btnSalve.Size = new System.Drawing.Size(158, 59);
+            this.btnSalve.TabIndex = 29;
+            this.btnSalve.Text = "SALVAR";
+            this.btnSalve.UseVisualStyleBackColor = true;
+            this.btnSalve.Click += new System.EventHandler(this.btnSalve_Click);
             // 
             // Form1
             // 
@@ -288,15 +298,15 @@ namespace CadastroDadosPessoais
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(800, 576);
-            this.Controls.Add(this.btnLimpar);
-            this.Controls.Add(this.btnEnviar);
+            this.Controls.Add(this.btnSalve);
+            this.Controls.Add(this.radioOutros);
+            this.Controls.Add(this.radioFeminino);
+            this.Controls.Add(this.radioMasculino);
+            this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.CampoEmail);
             this.Controls.Add(this.label11);
-            this.Controls.Add(this.campoTelefone);
+            this.Controls.Add(this.campoFone);
             this.Controls.Add(this.label10);
-            this.Controls.Add(this.checkBox3);
-            this.Controls.Add(this.checkBox2);
-            this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
@@ -304,7 +314,7 @@ namespace CadastroDadosPessoais
             this.Controls.Add(this.label6);
             this.Controls.Add(this.campoCidade);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.campoEndereço);
+            this.Controls.Add(this.campoEndereco);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.campoSobrenome);
@@ -312,7 +322,7 @@ namespace CadastroDadosPessoais
             this.Controls.Add(this.campoNome);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.campoData);
-            this.Controls.Add(this.campoUF);
+            this.Controls.Add(this.comboEstados);
             this.Name = "Form1";
             this.Text = "FORMULÁRIO DE DADOS PESSOAIS";
             this.ResumeLayout(false);
@@ -322,7 +332,7 @@ namespace CadastroDadosPessoais
 
         #endregion
 
-        private System.Windows.Forms.ComboBox campoUF;
+        private System.Windows.Forms.ComboBox comboEstados;
         private System.Windows.Forms.DateTimePicker campoData;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox campoNome;
@@ -330,7 +340,7 @@ namespace CadastroDadosPessoais
         private System.Windows.Forms.TextBox campoSobrenome;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox campoEndereço;
+        private System.Windows.Forms.TextBox campoEndereco;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox campoCidade;
         private System.Windows.Forms.Label label6;
@@ -338,15 +348,15 @@ namespace CadastroDadosPessoais
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.CheckBox checkBox2;
-        private System.Windows.Forms.CheckBox checkBox3;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox campoTelefone;
+        private System.Windows.Forms.TextBox campoFone;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TextBox CampoEmail;
-        private System.Windows.Forms.Button btnEnviar;
-        private System.Windows.Forms.Button btnLimpar;
+        private System.Windows.Forms.Button btnCancelar;
+        private System.Windows.Forms.RadioButton radioMasculino;
+        private System.Windows.Forms.RadioButton radioFeminino;
+        private System.Windows.Forms.RadioButton radioOutros;
+        private System.Windows.Forms.Button btnSalve;
     }
 }
 
